@@ -120,6 +120,9 @@ list_iterator_new_from_node(list_node_t *node, list_direction_t direction);
 list_node_t *
 list_iterator_next(list_iterator_t *self);
 
+list_iterator_t *
+list_iterator_refresh(list_iterator_t *self, list_t *list);
+
 void
 list_iterator_destroy(list_iterator_t *self);
 

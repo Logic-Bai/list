@@ -52,6 +52,19 @@ list_iterator_next(list_iterator_t *self) {
 }
 
 /*
+ * Let the iterator start iterating from the beginning
+ */
+
+list_iterator_t *
+list_iterator_refresh(list_iterator_t *self, list_t *list) {
+  list_node_t *node = self->direction == LIST_HEAD
+    ? list->head
+    : list->tail;
+  self->next = node;
+  return self;
+}
+
+/*
  * Free the list iterator.
  */
 
